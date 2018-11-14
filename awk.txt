@@ -12,3 +12,6 @@ awk '{a[$0]++}END{for (i in a) print i" "a[i]}' file
 
 awk去重并统计排序
 awk '{a[$0]++}END{for (i in a) print i" "a[i]| "sort -r -k 2"}' file
+
+去重并统计数量
+sort -n | uniq -c
