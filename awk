@@ -1,0 +1,14 @@
+去重并统计
+cat file | cut -d, -f2 |sort |uniq -c |sort -n
+
+awk去重
+awk '!a[$0]++' file
+
+awk去重并统计
+awk -F: '{a[$7]++}END{for (i in a) print i" "a[i]}' file
+
+awk去重并统计
+awk '{a[$0]++}END{for (i in a) print i" "a[i]}' file
+
+awk去重并统计排序
+awk '{a[$0]++}END{for (i in a) print i" "a[i]| "sort -r -k 2"}' file
